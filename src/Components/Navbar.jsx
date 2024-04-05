@@ -55,7 +55,7 @@ const Navbar = ({
             className="text-white text-xl cursor-pointer "
           />
         </div>
-        <Link href="/">
+        <Link to="/">
           <div
             onClick={() => {
               categoryID === "" ? setcategoryID(0) : setcategoryID("");
