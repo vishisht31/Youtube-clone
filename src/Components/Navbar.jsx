@@ -5,7 +5,7 @@ import logo from "../assets/Youtube.png";
 import { IoIosSearch } from "react-icons/io";
 import upload from "../assets/upload.png";
 import notification from "../assets/notification.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({
   setShowSidebar,
@@ -33,7 +33,7 @@ const Navbar = ({
       if (item.id.kind !== "youtube#channel") {
         arr.push(item);
       }
-    })
+    });
     setData(arr);
     setLoading(false);
   };
@@ -55,15 +55,17 @@ const Navbar = ({
             className="text-white text-xl cursor-pointer "
           />
         </div>
-        <div
-          onClick={() => {
-            categoryID === "" ? setcategoryID(0) : setcategoryID("");
-            navigate("/");
-          }}
-          className="flex h-5 items-center cursor-pointer "
-        >
-          <img src={logo} className="h-full" alt="logo" />
-        </div>
+        <Link href="/">
+          <div
+            onClick={() => {
+              categoryID === "" ? setcategoryID(0) : setcategoryID("");
+              navigate("/");
+            }}
+            className="flex h-5 items-center cursor-pointer "
+          >
+            <img src={logo} className="h-full" alt="logo" />
+          </div>
+        </Link>
       </div>
 
       <form

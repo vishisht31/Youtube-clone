@@ -23,7 +23,7 @@ function Sidebar({ showSidebar, setcategoryID, data }) {
   ];
 
   return (
-    <div className="SideBar relative max-h-[calc(100vh-56px)] w-fit text-white  p-3 overflow-y-auto hidden md:block">
+    <div className="SideBar overflow-hidden relative max-h-[calc(100vh-56px)] w-fit text-white  p-3 overflow-y-auto hidden md:block">
       <div className="p-2">
         <h2 className={` font-semibold my-1 ${showSidebar ? "" : "hidden"} `}>
           Explore
